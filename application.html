@@ -55,6 +55,8 @@
 
     <!-- Template Stylesheet -->
     <link href="https://hbtronics.ae/css/style.css" rel="stylesheet">
+    <!-- International Telephone Input CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.1.1/css/intlTelInput.css" />
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -94,6 +96,21 @@
     </script>
 </head>
 <style>
+    /* Make intl-tel-input full width inside form-floating */
+    .iti {
+        width: 100%;
+    }
+
+    .iti__flag-container {
+        top: 0;
+        height: 100%;
+    }
+
+    .iti__selected-flag {
+        top: 0;
+    }
+</style>
+<style>
     .nav-pills .nav-link i {
         color: #f17621;
         /* inactive icon color */
@@ -104,7 +121,6 @@
         /* active icon uses default Bootstrap color */
     }
 </style>
-
 <style>
     .floating-btn {
         position: fixed;
@@ -136,6 +152,32 @@
 
     .floating-btn:hover {
         transform: scale(1.1);
+    }
+</style>
+
+<style>
+    .whatsapp {
+        bottom: 10px;
+    }
+
+    .messenger {
+        bottom: 20px;
+    }
+
+    .floating-btn img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .floating-btn:hover {
+        transform: scale(1.1);
+    }
+
+    .form-check-input:checked {
+        background-color: #f17621 !important;
+        border-color: #f17621 !important;
+        box-shadow: none;
+        /* remove Bootstrap blue shadow */
     }
 </style>
 
@@ -198,8 +240,8 @@
                 <a href="index.html" class="nav-item nav-link ">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="service.html" class="nav-item nav-link">Services</a>
-                <a href="contact.html" class="nav-item nav-link active">Contact</a>
-                <a href="application.html" class="nav-item nav-link">Application</a>
+                <a href="contact.html" class="nav-item nav-link ">Contact</a>
+                <a href="application.html" class="nav-item nav-link active">Application</a>
             </div>
             <a href="" class="btn py-4 px-lg-5 d-none d-lg-block" style="color: white; background-color: #f17621;">Get A
                 Quote<i class="fa fa-arrow-right ms-3"></i></a>
@@ -207,159 +249,176 @@
     </nav>
     <!-- Navbar End -->
 
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-1.webp);">
-        <div class="container-fluid page-header-inner py-5">
-            <div class="container text-center">
-                <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
-            </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
-
-
-    <!-- Contact Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-uppercase" style="color: #f17621;">// Contact Us //</h6>
-                <h1 class="mb-5">Contact For Any Query</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-12">
-                    <div class="row gy-4">
-                        <div class="col-md-4">
-                            <div class="bg-light d-flex flex-column justify-content-center p-4">
-                                <h5 class="text-uppercase">// Address //</h5>
-                                <p class="m-0"><i class="fa fa-map-marker-alt me-2" style="color: #f17621;"></i>Ras
-                                    Elkhour - Ras Al Khor Industrial Area 2 - Dubai - United Arab Emirates</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="bg-light d-flex flex-column justify-content-center p-4">
-                                <h5 class="text-uppercase">// Email //</h5>
-                                <p class="m-0"><i class="fa fa-envelope-open  me-2"
-                                        style="color: #f17621;"></i>info@hbtronics.ae</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="bg-light d-flex flex-column justify-content-center p-4">
-                                <h5 class="text-uppercase">// Phone //</h5>
-                                <p class="m-0"><i class="fa fa-phone-alt  me-2"
-                                        style="color: #f17621;"></i>+971508950164</p>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container pt-5 text-black">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center position-relative mb-4 pb-2">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Application Form
+                    </h6>
+                    <h1 class="display-6 mb-4">Apply to Our Training Programs</h1>
+                    <p>
+                        Please fill out the form below to apply to our training programs. Our team will contact you
+                        shortly.
+                    </p>
                 </div>
-                <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
-                    <iframe class="position-relative rounded w-100 h-100"
-                        src="https://www.google.com/maps?q=25.18271,55.35278&hl=en&z=14&output=embed" frameborder="0"
-                        style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
-                    </iframe>
 
-                </div>
-                <div class="col-md-6">
-                    <div class="wow fadeInUp" data-wow-delay="0.2s">
-                        <form id="hbtronicsContactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Your Name" required>
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email"
-                                            placeholder="Your Email" required>
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" name="subject"
-                                            placeholder="Subject" required>
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                            name="message" style="height: 100px" required></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit"
-                                        style="color: white; background-color: #f17621; border: none;">Send
-                                        Message</button>
+                <div class="bg-light rounded p-4 p-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <form method="POST" id="trainingForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="Full name" required>
+                                    <label for="name">Full name</label>
                                 </div>
                             </div>
-                        </form>
 
-                        <script>
-                            const HBTRONICS_CONTACT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbymlegJqXTzfRXlmkc0BAMkVYD3FHs0rK2oNoolw_iTfMisE9N0qurbRuZlboEo4Z7Ppg/exec';
-                            function handleHbtronicsContactSubmit(e) {
-                                e.preventDefault();
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                                        required>
+                                    <label for="email">Email</label>
+                                    <div id="email-validation-status" class="mt-2"></div>
+                                </div>
+                            </div>
 
-                                const form = e.target;
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                        placeholder="Phone number" required>
+                                    <input type="hidden" id="country-code" name="countryCode" />
+                                </div>
+                            </div>
 
-                                const formData = {
-                                    formType: 'hbtronics-contact',
-                                    name: form.name.value,
-                                    email: form.email.value,
-                                    subject: form.subject.value,
-                                    message: form.message.value
-                                };
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <select class="form-control bg-white" id="trainingDuration" name="trainingDuration"
+                                        required>
+                                        <option value="">Select a training duration</option>
+                                        <option value="long-term">Long-term (more than 6 months)</option>
+                                        <option value="short-term">Short-term (2 months)</option>
+                                        <option value="fast-term">Intensive (one week)</option>
+                                    </select>
+                                    <label for="trainingDuration">Training Duration</label>
+                                </div>
+                            </div>
 
-                                // Create hidden iframe for submission
-                                const iframe = document.createElement('iframe');
-                                iframe.name = 'hidden_iframe';
-                                iframe.style.display = 'none';
-                                document.body.appendChild(iframe);
+                            <div class="col-md-12">
+                                <label class="form-label">Training Programs (select all that apply)</label>
+                                <div class="form-control bg-white" style="height: auto; min-height: 120px;">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="training"
+                                            value="ecu-programming" id="training1">
+                                        <label class="form-check-label" for="training1">ECU Programming</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="training"
+                                            value="vehicle-diagnostics" id="training2">
+                                        <label class="form-check-label" for="training2">Vehicle Diagnostics</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="training"
+                                            value="hybrid-systems" id="training3">
+                                        <label class="form-check-label" for="training3">Hybrid Systems</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="training"
+                                            value="electric-vehicles" id="training4">
+                                        <label class="form-check-label" for="training4">Electric Vehicle Systems</label>
+                                    </div>
+                                </div>
+                            </div>
 
-                                // Create temporary form
-                                const tempForm = document.createElement('form');
-                                tempForm.action = HBTRONICS_CONTACT_SCRIPT_URL;
-                                tempForm.method = 'POST';
-                                tempForm.target = 'hidden_iframe';
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Laissez un message ici" id="message"
+                                        name="message" style="height: 70px"></textarea>
+                                    <label for="message">Comment</label>
+                                </div>
+                            </div>
 
-                                const input = document.createElement('input');
-                                input.type = 'hidden';
-                                input.name = 'data';
-                                input.value = JSON.stringify(formData);
-                                tempForm.appendChild(input);
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 py-3"
+                                    style="background-color: #F47821; border-color: #F47821;">
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
-                                document.body.appendChild(tempForm);
-                                tempForm.submit();
+                    <script>
+                        const TRAINING_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbymlegJqXTzfRXlmkc0BAMkVYD3FHs0rK2oNoolw_iTfMisE9N0qurbRuZlboEo4Z7Ppg/exec'; // Replace if you have a new URL
 
-                                // Show success message and reset form
-                                setTimeout(() => {
-                                    alert('Message sent successfully!');
-                                    form.reset();
-                                    document.body.removeChild(tempForm);
-                                    document.body.removeChild(iframe);
-                                }, 1000);
+                        function handleTrainingSubmit(e) {
+                            e.preventDefault();
 
-                                return false;
-                            }
+                            const form = e.target;
 
-                            // Attach the submit handler when DOM is ready
-                            document.addEventListener('DOMContentLoaded', function () {
-                                const hbtronicsContactForm = document.getElementById('hbtronicsContactForm');
-                                if (hbtronicsContactForm) {
-                                    hbtronicsContactForm.addEventListener('submit', handleHbtronicsContactSubmit);
-                                }
+                            // Get all selected training programs
+                            const selectedTrainings = [];
+                            const checkboxes = form.querySelectorAll('input[name="training"]:checked');
+                            checkboxes.forEach(checkbox => {
+                                selectedTrainings.push(checkbox.value);
                             });
-                        </script>
-                    </div>
+
+                            const formData = {
+                                formType: 'training',
+                                name: form.name.value,
+                                email: form.email.value,
+                                phone: form.phone.value,
+                                countryCode: form.countryCode.value,
+                                trainingDuration: form.trainingDuration.value,
+                                trainingPrograms: selectedTrainings.join(', '),
+                                message: form.message.value
+                            };
+
+                            // Create hidden iframe for submission
+                            const iframe = document.createElement('iframe');
+                            iframe.name = 'hidden_iframe';
+                            iframe.style.display = 'none';
+                            document.body.appendChild(iframe);
+
+                            // Create temporary form
+                            const tempForm = document.createElement('form');
+                            tempForm.action = TRAINING_SCRIPT_URL;
+                            tempForm.method = 'POST';
+                            tempForm.target = 'hidden_iframe';
+
+                            const input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = 'data';
+                            input.value = JSON.stringify(formData);
+                            tempForm.appendChild(input);
+
+                            document.body.appendChild(tempForm);
+                            tempForm.submit();
+
+                            // Show success message and reset form
+                            setTimeout(() => {
+                                alert('Training application submitted successfully!');
+                                form.reset();
+                                document.body.removeChild(tempForm);
+                                document.body.removeChild(iframe);
+                            }, 1000);
+
+                            return false;
+                        }
+
+                        // Attach the submit handler when DOM is ready
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const trainingForm = document.getElementById('trainingForm');
+                            if (trainingForm) {
+                                trainingForm.addEventListener('submit', handleTrainingSubmit);
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+
+
+
 
 
 
@@ -438,9 +497,51 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- International Telephone Input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.1.1/js/intlTelInput.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+
+    <script>
+        const phoneInput = document.querySelector("#phone");
+        const countryCodeInput = document.querySelector("#country-code");
+        const iti = window.intlTelInput(phoneInput, {
+            initialCountry: "auto",
+            geoIpLookup: function (callback) {
+                fetch("https://ipinfo.io/json?token=<YOUR_TOKEN>")
+                    .then((resp) => resp.json())
+                    .then((resp) => {
+                        callback(resp.country);
+                        // Set the country code in the hidden input
+                        countryCodeInput.value = resp.country;
+                    })
+                    .catch(() => {
+                        callback("ae"); // fallback UAE
+                        countryCodeInput.value = "ae";
+                    });
+            },
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.1.1/js/utils.js",
+        });
+
+        // On submit -> replace with full number (code + local part)
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+            if (phoneInput.value.trim()) {
+                // Get the full international number with country code
+                phoneInput.value = iti.getNumber();
+
+                // Also update the country code input with the currently selected country
+                countryCodeInput.value = iti.getSelectedCountryData().iso2;
+            }
+        });
+    </script>
+
+
 </body>
 
 </html>
